@@ -15,8 +15,8 @@
 
 写成矩阵乘法的形式为![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{X}}=\\frac{\\partial{J}}{\\partial{H}}W^T)和![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{W}}=X^T\\frac{\\partial{J}}{\\partial{H}})。
 
-不妨在简单情况下验证一下上面的公式，有一个更清晰的印象。我们假设![](http://latex.codecogs.com/svg.latex?X)和![](http://latex.codecogs.com/svg.latex?)W)分别是![](http://latex.codecogs.com/svg.latex?(2,3))和![](http://latex.codecogs.com/svg.latex?(3,2))，全连接层的运算可以表示成下面的公式：
-![image](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense3.png)
+不妨在简单情况下验证一下上面的公式，有一个更清晰的印象。我们假设![](http://latex.codecogs.com/svg.latex?X)和![](http://latex.codecogs.com/svg.latex?)W)分别是![](http://latex.codecogs.com/svg.latex?(2,3))和![](http://latex.codecogs.com/svg.latex?(3,2))，全连接层的矩阵运算可以表示成下面的公式：
+![image](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense3.png= 400x250)
 
 那么有：
 
@@ -28,10 +28,26 @@
 
 ![](http://latex.codecogs.com/svg.latex?h_{22}=x_{21}w_{12}+x_{22}w_{22}+x_{23}w_{2})
 
+那么可以计算损失对w的偏导：
+
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{11}}}=\\frac{\\partial{J}}{\\partial{h_{11}}}x_{11}+\\frac{\\partial{J}}{\\partial{h_{21}}}x_{21})
+
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{12}}}=\\frac{\\partial{J}}{\\partial{h_{12}}}x_{11}+\\frac{\\partial{J}}{\\partial{h_{22}}}x_{21})
+
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{21}}}=\\frac{\\partial{J}}{\\partial{h_{11}}}x_{12}+\\frac{\\partial{J}}{\\partial{h_{21}}}x_{22})
+
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{22}}}=\\frac{\\partial{J}}{\\partial{h_{12}}}x_{12}+\\frac{\\partial{J}}{\\partial{h_{22}}}x_{22})
+
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{31}}}=\\frac{\\partial{J}}{\\partial{h_{11}}}x_{13}+\\frac{\\partial{J}}{\\partial{h_{21}}}x_{23})
+
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{32}}}=\\frac{\\partial{J}}{\\partial{h_{12}}}x_{13}+\\frac{\\partial{J}}{\\partial{h_{22}}}x_{23})
+
 如下所示，求导后和写成矩阵乘的形式显然是一致的。
 
-![image](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense4.png)
-![image](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense5.png)
+![image](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense4.png= 400x250)
+
+下面是损失对输入x偏导的矩阵形式，有兴趣小伙伴们可以验算一下：
+![image](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense5.png= 400x250)
 
 
 
