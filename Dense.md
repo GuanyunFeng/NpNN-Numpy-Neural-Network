@@ -15,8 +15,21 @@
 
 写成矩阵乘法的形式为![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{X}}=\\frac{\\partial{J}}{\\partial{H}}W^T)和![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{W}}=X^T\\frac{\\partial{J}}{\\partial{H}})。
 
+不妨在简单情况下验证一下上面的公式，有一个更清晰的印象。我们假设![](http://latex.codecogs.com/svg.latex?X)和![](http://latex.codecogs.com/svg.latex?)W)分别是![](http://latex.codecogs.com/svg.latex?(2,3))和![](http://latex.codecogs.com/svg.latex?(3,2))，全连接层的运算可以表示成下面的公式：
+![image](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense3.png)
+那么有：
+![](http://latex.codecogs.com/svg.latex?h_{11}=x_{11}w_{11}+x_{12}w_{21}+x_{13}w_{31})
 
+![](http://latex.codecogs.com/svg.latex?h_{12}=x_{11}w_{12}+x_{22}w_{22}+x_{13}w_{32})
 
+![](http://latex.codecogs.com/svg.latex?h_{21}=x_{21}w_{11}+x_{22}w_{21}+x_{23}w_{31})
+
+![](http://latex.codecogs.com/svg.latex?h_{22}=x_{21}w_{12}+x_{22}w_{22}+x_{23}w_{2})
+
+如下所示，求导后和写成矩阵乘的形式显然是一致的。
+
+![image](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense4.png)
+![image](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense5.png)
 
 
 
