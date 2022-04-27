@@ -13,7 +13,7 @@
 
 观察前向传播中的图二不难发现，做矩阵乘法后有![](http://latex.codecogs.com/svg.latex?h_{ij}=\sum_{k}{x_{jk}w_{ki}}), 因此有![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{ij}}}=\\sum_{k}{\\frac{\\partial{J}}{\\partial{h_{jk}}}x_{ki}})和![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{x_{ij}}}=\\sum_{k}{\\frac{\\partial{J}}{\\partial{h_{ki}}}w_{jk}})。
 
-写成矩阵乘法的形式为![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{X}}=\\frac{\\partial{J}}{\\partial{H}}W^T)和![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{W}}=\\frac{\\partial{J}}{\\partial{H}}W^T)。
+写成矩阵乘法的形式为![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{X}}=\\frac{\\partial{J}}{\\partial{H}}W^T)和![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{W}}=X^T\\frac{\\partial{J}}{\\partial{H}})。
 
 
 
