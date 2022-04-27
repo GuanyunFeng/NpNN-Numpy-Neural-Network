@@ -1,1 +1,1 @@
-# NNN-Numpy-Neural-Network-
+# NpNN-Numpy-Neural-Network
