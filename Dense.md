@@ -31,16 +31,13 @@
 
 那么可以计算损失对w的偏导：
 
-![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{11}}}=\\frac{\\partial{J}}{\\partial{h_{11}}}x_{11}+\\frac{\\partial{J}}{\\partial{h_{21}}}x_{21})
-
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{11}}}=\\frac{\\partial{J}}{\\partial{h_{11}}}x_{11}+\\frac{\\partial{J}}{\\partial{h_{21}}}x_{21})，
 ![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{12}}}=\\frac{\\partial{J}}{\\partial{h_{12}}}x_{11}+\\frac{\\partial{J}}{\\partial{h_{22}}}x_{21})
 
-![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{21}}}=\\frac{\\partial{J}}{\\partial{h_{11}}}x_{12}+\\frac{\\partial{J}}{\\partial{h_{21}}}x_{22})
-
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{21}}}=\\frac{\\partial{J}}{\\partial{h_{11}}}x_{12}+\\frac{\\partial{J}}{\\partial{h_{21}}}x_{22})，
 ![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{22}}}=\\frac{\\partial{J}}{\\partial{h_{12}}}x_{12}+\\frac{\\partial{J}}{\\partial{h_{22}}}x_{22})
 
-![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{31}}}=\\frac{\\partial{J}}{\\partial{h_{11}}}x_{13}+\\frac{\\partial{J}}{\\partial{h_{21}}}x_{23})
-
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{31}}}=\\frac{\\partial{J}}{\\partial{h_{11}}}x_{13}+\\frac{\\partial{J}}{\\partial{h_{21}}}x_{23})，
 ![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{32}}}=\\frac{\\partial{J}}{\\partial{h_{12}}}x_{13}+\\frac{\\partial{J}}{\\partial{h_{22}}}x_{23})
 
 如下所示，求导后和写成矩阵乘的形式显然是一致的。
