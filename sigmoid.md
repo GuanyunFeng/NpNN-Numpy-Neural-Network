@@ -20,3 +20,16 @@ sigmoid公式为![](http://latex.codecogs.com/svg.latex?S(x)=\\frac{1}{1+e^{-x}}
 ![](http://latex.codecogs.com/svg.latex?=\\frac{1}{1+e^{-x}}(1-\\frac{1}{1+e^{-x}}))
 
 ![](http://latex.codecogs.com/svg.latex?=S(x)(1-S(x)))
+
+## 代码实现
+```
+class Sigmoid():
+    def forward(self, input):
+        #grad,input,output的形状均为（batch_size,units)
+        output = 1. / (1. + np.exp(-input))
+        self.grad = output*(1-output)
+        return output
+
+    def backward(self, mul_grad):
+        return self.grad*mul_grad
+```
