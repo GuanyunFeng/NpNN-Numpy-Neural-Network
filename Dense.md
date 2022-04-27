@@ -14,7 +14,8 @@
 观察前向传播中的图二不难发现，做矩阵乘法后有![](http://latex.codecogs.com/svg.latex?h_{ij}=\sum_{k}{x_{jk}w_{ki}}), 因此有![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{ij}}}=\\sum_{k}{\\frac{\\partial{J}}{\\partial{h_{jk}}}x_{ki}})和![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{x_{ij}}}=\\sum_{k}{\\frac{\\partial{J}}{\\partial{h_{ki}}}w_{jk}})。
 
 写成矩阵乘法的形式为![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{X}}=\\frac{\\partial{J}}{\\partial{H}}W^T)和![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{W}}=X^T\\frac{\\partial{J}}{\\partial{H}})。
-
+</br>
+</br>
 不妨在简单情况下验证一下上面的公式，有一个更清晰的印象。我们假设![](http://latex.codecogs.com/svg.latex?X)和![](http://latex.codecogs.com/svg.latex?)W)分别是![](http://latex.codecogs.com/svg.latex?(2,3))和![](http://latex.codecogs.com/svg.latex?(3,2))，全连接层的矩阵运算可以表示成下面的公式：
 
 <img src="https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense3.png" width="600" height="200">
