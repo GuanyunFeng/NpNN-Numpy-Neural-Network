@@ -17,7 +17,7 @@
 
 不妨在简单情况下验证一下上面的公式，有一个更清晰的印象。我们假设![](http://latex.codecogs.com/svg.latex?X)和![](http://latex.codecogs.com/svg.latex?)W)分别是![](http://latex.codecogs.com/svg.latex?(2,3))和![](http://latex.codecogs.com/svg.latex?(3,2))，全连接层的矩阵运算可以表示成下面的公式：
 
-<img src="https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense3.png" width="400" height="200">
+<img src="https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense3.png" width="600" height="200">
 
 那么有：
 
@@ -45,11 +45,11 @@
 
 如下所示，求导后和写成矩阵乘的形式显然是一致的。
 
-<img src="https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense4.png" width="400" height="200">
+<img src="https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense4.png" width="500" height="200">
 
 下面是损失对输入x偏导的矩阵形式，有兴趣小伙伴们可以验算一下：
 
-<img src="https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense4.png" width="400" height="200">
+<img src="https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense4.png" width="500" height="200">
 
 
 
