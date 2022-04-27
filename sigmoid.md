@@ -8,4 +8,9 @@ sigmoid公式为![](http://latex.codecogs.com/svg.latex?S(x)=\\frac{1}{1+e^{-x}}
 ## 求导
 
 由于没有参数，只需要计算输出对输入的偏导:
-![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{S(x)}}{\\partial{x}=\\frac{e^(-x)}{(1+e^{-x})^2}=\\frac{1+e^(-x)-1}{(1+e^{-x})^2}=\\frac{1}{1+e^{-x}}-\\frac{1}{(1+e^{-x})^2}=\\frac{1}{1+e^{-x}}(1-\\frac{1}{1+e^{-x}}=S(x)(1-S(x)))
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{S(x)}}{\\partial{x})
+![](http://latex.codecogs.com/svg.latex?=\\frac{e^(-x)}{(1+e^{-x})^2})
+![](http://latex.codecogs.com/svg.latex?=\\frac{1+e^(-x)-1}{(1+e^{-x})^2})
+![](http://latex.codecogs.com/svg.latex?=\\frac{1}{1+e^{-x}}-\\frac{1}{(1+e^{-x})^2})
+![](http://latex.codecogs.com/svg.latex?=\\frac{1}{1+e^{-x}}(1-\\frac{1}{1+e^{-x}})
+![](http://latex.codecogs.com/svg.latex?=S(x)(1-S(x)))
