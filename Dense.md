@@ -53,7 +53,7 @@
 
 
 ## 参数初始化
-在本仓库中，使用Xavier进行初始化。参数随机生成，并服从高斯分布。即![](http://latex.codecogs.com/svg.latex?W\\obeys N(0,\\frac{1}{units}))。
+在本仓库中，使用Xavier进行初始化。参数随机生成，并服从高斯分布。即![](http://latex.codecogs.com/svg.latex?W\\sim N(0,\\frac{1}{units}))。
 
 
 ## 代码实现
