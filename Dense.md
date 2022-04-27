@@ -14,7 +14,7 @@
 不妨假设![](http://latex.codecogs.com/svg.latex?X)、![](http://latex.codecogs.com/svg.latex?W)分别是![](http://latex.codecogs.com/svg.latex?(2,3))、![](http://latex.codecogs.com/svg.latex?(3,2))的张量,如下所示。
 ![image](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/dense3.png)
 
-那么![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{ij}}}=\\sum{\\frac{\\partial{J}}{\\partial{h_{ji}}}x_{ji}})
+那么![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{J}}{\\partial{w_{ij}}}=\\sum{\\frac{\\partial{J}}{\\partial{h_{ji}}}})
 
 
 
