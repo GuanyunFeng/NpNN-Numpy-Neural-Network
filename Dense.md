@@ -10,7 +10,7 @@
 ## 反向传播
 那么反向传播计算梯度时，dense层需要做些什么呢？
 
-正如上文所说，我们可以将w和b连接起来形成新的权重，因此在计算梯度时可以统一计算方法。在使用偏置b的情况下，下文中的w指原始)w)和)b)连接后的权重。由链导法则可知，我们会得到损失对dense层输出的偏导![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{loss}}{\\partial{h(x)}}), 其维度是(n, k)。一方面，我们需要计算出dense层输出对dense层权重的偏导![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{h(x)}}{\\partial{W}})，用于权重更新；另一方面，我们需要计算出dense层输出对dense层输入的偏导![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{h(x)}}{\\partial{X}})，用于继续进行反向传播。
+正如上文所说，我们可以将![](http://latex.codecogs.com/svg.latex?W)和![](http://latex.codecogs.com/svg.latex?B)连接起来形成新的权重，因此在计算梯度时可以统一计算方法。在使用偏置B的情况下，下文中的W指原始![](http://latex.codecogs.com/svg.latex?W)和![](http://latex.codecogs.com/svg.latex?B)连接后的权重。由链导法则可知，我们会得到损失对dense层输出的偏导![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{loss}}{\\partial{h(x)}}), 其维度是(n, k)。一方面，我们需要计算出dense层输出对dense层权重的偏导![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{h(x)}}{\\partial{W}})，用于权重更新；另一方面，我们需要计算出dense层输出对dense层输入的偏导![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{h(x)}}{\\partial{X}})，用于继续进行反向传播。
 
 
 
