@@ -11,19 +11,25 @@
 
 ## 求导
 
-尽管Softmax没有参数，但每一维的输入都与所有输入有关，因此我们需要计算每一个输出对所有输入的偏导数。注意，这一点与Sigmoid激活函数是不同的。不考虑batchsize的维度，输入为![](http://latex.codecogs.com/svg.latex?X=[x_1,x_2,x_3,...,x_m]),经Softmax运算后输出为![](http://latex.codecogs.com/svg.latex?X=[s_1,s_2,s_3,...,s_m])。那么我们需要分别计算![](http://latex.codecogs.com/svg.latex?s_i、x_j)两两之间的偏导。
+尽管Softmax没有参数，但每一维的输入都与所有输入有关，因此我们需要计算每一个输出对所有输入的偏导数。注意，这一点与Sigmoid激活函数是不同的。不考虑batchsize的维度，输入为![](http://latex.codecogs.com/svg.latex?X=[x_1,x_2,x_3,...,x_m]),经Softmax运算后输出为![](http://latex.codecogs.com/svg.latex?X=[s_1,s_2,s_3,...,s_m])。那么我们需要分别计算![](http://latex.codecogs.com/svg.latex?s_j、x_k)两两之间的偏导。
 
-当![](http://latex.codecogs.com/svg.latex?i=j)时:
+当![](http://latex.codecogs.com/svg.latex?j=k)时:
 
-![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}}}{\\partial{x_i}}=\\frac{e^{x_i}\sum_i^k{e^{x_i}}-e^{x_i}e^{x_i}}{(\sum_i^k{e^{x_i}})^2})
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{s_j}}{\\partial{x_j}}=\\frac{e^{x_j}\sum_i{e^{x_i}}-e^{x_j}e^{x_j}}{(\sum_i{e^{x_i}})^2})
 
-![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}\\frac{\sum_i^k{e^{x_i}}}-e^{x_i}}{\sum_i^k{e^{x_i}}}})
+![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_j}}{\sum_i{e^{x_j}}}\\frac{\sum_i{e^{x_i}}}-e^{x_j}}{\sum_i{e^{x_i}}})
 
-![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}(1-\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}))
+![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_j}}{\sum_i{e^{x_i}}}(1-\\frac{e^{x_j}}{\sum_i{e^{x_i}}}))
 
-![](http://latex.codecogs.com/svg.latex?=s_i(1-s_i))
+![](http://latex.codecogs.com/svg.latex?=s_j(1-s_j))
 
-当![](http://latex.codecogs.com/svg.latex?ij)时:
+当![](http://latex.codecogs.com/svg.latex?i \\neq j)时:
+
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{s_j}}{\\partial{x_k}}=\\frac{0*\sum_i{e^{x_i}}-e^{x_j}e^{x_k}}{(\sum_i^k{e^{x_i}})^2})
+
+![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_j}}{\sum_i^k{e^{x_i}}}\\frac{e^{x_k}}{\sum_i^k{e^{x_i}}})
+
+![](http://latex.codecogs.com/svg.latex?=-s_js_k))
 
 ## 代码实现
 ```
