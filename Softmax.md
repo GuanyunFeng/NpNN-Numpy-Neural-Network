@@ -15,15 +15,13 @@
 
 当![](http://latex.codecogs.com/svg.latex?i=j)时:
 
-![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{S(x)}}{\\partial{x_i}}=\\frac{e^{x_i}\sum_i^k{e^{x_i}}-e^{x_i}e^{x_i}}{(\sum_i^k{e^{x_i}})^2})
+![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}}}{\\partial{x_i}}=\\frac{e^{x_i}\sum_i^k{e^{x_i}}-e^{x_i}e^{x_i}}{(\sum_i^k{e^{x_i}})^2})
 
-![](http://latex.codecogs.com/svg.latex?=\\frac{1+e^(-x)-1}{(1+e^{-x})^2})
+![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}}\\frac{\sum_i^k{e^{x_i}}}-e^{x_i}}{\sum_i^k{e^{x_i}}}})
 
-![](http://latex.codecogs.com/svg.latex?=\\frac{1}{1+e^{-x}}-\\frac{1}{(1+e^{-x})^2})
+![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}}(1-\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}}))
 
-![](http://latex.codecogs.com/svg.latex?=\\frac{1}{1+e^{-x}}(1-\\frac{1}{1+e^{-x}}))
-
-![](http://latex.codecogs.com/svg.latex?=S(x)(1-S(x)))
+![](http://latex.codecogs.com/svg.latex?=s_i(1-s_i))
 
 当![](http://latex.codecogs.com/svg.latex?ij)时:
 
