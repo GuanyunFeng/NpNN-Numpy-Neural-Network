@@ -30,14 +30,13 @@ class Leaky_Relu():
         return self.grad*mul_grad  
 
 class Tanh():
-    def __init__(self):
-        pass
-
     def forward(self):
-        pass
+        output = (np.exp(input) - np.exp(-input)) / (np.exp(input) + np.exp(-input))
+        self.grad = 1 - output*output
+        return output
 
     def backward(self):
-        pass
+        return self.grad*mul_grad
 
 
 class Sigmoid():
