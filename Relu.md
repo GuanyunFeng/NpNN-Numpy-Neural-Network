@@ -1,11 +1,13 @@
 # Sigmoid
 
 ## 前向传播
-通常Relu的输入维度为(batchsize, units),其中units是上一层输出的特征维度。Relu公式为![](https://latex.codecogs.com/svg.image?y=\begin{cases}x,&space;&&space;x>0,\\0,&space;&&space;x&space;\le&space;0\end{cases})。Relu函数曲线如下，图片来自百度百科：
+通常Relu的输入维度为(batchsize, units),其中units是上一层输出的特征维度。Relu公式为<img src="https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/relu.svg">。Relu函数曲线如下，图片来自百度百科：
 
 <img src="https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/relu.jpg">
 
 leaky Relu是在Relu的基础上进行了微调，当x小于零时加一个小斜率而非直接置零。公式为![](https://latex.codecogs.com/svg.image?y=\begin{cases}x,&space;&&space;x>0,\\0.1x,&space;&&space;x&space;\le&space;0\end{cases})
+
+<img src="https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/relu.jpg">
 
 ## 求导
 
