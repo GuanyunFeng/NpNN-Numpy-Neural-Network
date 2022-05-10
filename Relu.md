@@ -1,7 +1,10 @@
 # Sigmoid
 
 ## 前向传播
-通常Relu的输入维度为(batchsize, units),其中units是上一层输出的特征维度。Relu公式为![](http://latex.codecogs.com/svg.latex?y=\\begin{cases}x,&x>0,\\-x,&x\\le{0}\\end{cases}), 该激活函数将输出映射到0-1之间。Relu函数曲线如下，图片来自百度百科：
+通常Relu的输入维度为(batchsize, units),其中units是上一层输出的特征维度。Relu公式为![](http://latex.codecogs.com/svg.latex?y=\\begin{cases}
+x,&x>0,\\
+-x,&x\\le{0}
+\\end{cases}), 该激活函数将输出映射到0-1之间。Relu函数曲线如下，图片来自百度百科：
 
 <img src="https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/fig/relu.jpg">
 
