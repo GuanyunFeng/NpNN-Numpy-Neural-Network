@@ -17,7 +17,7 @@
 
 ![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{s_j}}{\\partial{x_j}}=\\frac{e^{x_j}\sum_i{e^{x_i}}-e^{x_j}e^{x_j}}{(\sum_i{e^{x_i}})^2})
 
-![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_j}}{\sum_i{e^{x_j}}}\\frac{\sum_i{e^{x_i}}}-e^{x_j}}{\sum_i{e^{x_i}}})
+![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_j}}{\sum_i{e^{x_j}}}\\frac{\sum_i{e^{x_i}}-e^{x_j}}{\sum_i{e^{x_i}}})
 
 ![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_j}}{\sum_i{e^{x_i}}}(1-\\frac{e^{x_j}}{\sum_i{e^{x_i}}}))
 
@@ -29,7 +29,7 @@
 
 ![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_j}}{\sum_i^k{e^{x_i}}}\\frac{e^{x_k}}{\sum_i^k{e^{x_i}}})
 
-![](http://latex.codecogs.com/svg.latex?=-s_js_k))
+![](http://latex.codecogs.com/svg.latex?=-s_js_k)
 
 ## 代码实现
 ```
