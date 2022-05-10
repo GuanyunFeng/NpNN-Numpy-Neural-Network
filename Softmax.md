@@ -1,11 +1,9 @@
 # Softmax
 
 ## 前向传播
-通常Softmax的输入维度为(batchsize, units),其中units是上一层输出的特征维度。Softmax常用于分类模型的最后数据归一化，经softmax处理后的值可以被视为该分类的概率。Softmax公式为![](http://latex.codecogs.com/svg.latex?S(x)=\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}})。
+通常Softmax的输入维度为(batchsize, units),其中units是上一层输出的特征维度。Softmax常用于分类模型的最后数据归一化，经softmax处理后的值可以被视为该分类的概率。Softmax公式为![](http://latex.codecogs.com/svg.latex?S(x)=\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}})。在进行工程实现时，需要注意两点：
 
-在进行工程实现时，需要注意两点：
-
-一、防止除零。当输入为全零时，按照公式计算会产生报错，我们应当在分母上加上一个极小值防止除零。在本仓库代码中的极小值设置为1e-7。
+一、防止除零。当输入为全零时，按照公式计算会产生报错，我们应当在分母上加上一个极小值防止除零。本仓库代码中的极小值设置为1e-7。
 
 二、防止溢出。公式需要计算![](http://latex.codecogs.com/svg.latex?e^{x_i})，而指数函数增长很快，遇到较大的![](http://latex.codecogs.com/svg.latex?x_i)可能导致计算出现nan。通过观察不难发现，![](http://latex.codecogs.com/svg.latex?S(x)=\\frac{e^{x_i-D}}{\sum_i^k{e^{x_i-D}}})与原公式是等价的。因此我们对输入进行变换，同时减去其中最大的数值，再进行运算。
 
