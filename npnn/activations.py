@@ -14,17 +14,20 @@ class Relu():
         return self.grad*mul_grad
 
 class Leaky_Relu():
+    def __init__(self, leaky=0.1):
+        self.leaky = leaky
+
     def forward(self, input):
         #grad,input,output的形状均为（batch_size,units)
         output = input.copy()
-        output[output < 0] = output * 0.15
+        output[output < 0] = output * self.leaky
         self.grad = output.copy()
         self.grad[self.grad > 0] = 1
-        self.grad[self.grad <= 0] = 0.15
+        self.grad[self.grad <= 0] = self.leaky
         return output
 
     def backward(self, mul_grad):
-        return self.grad*mul_grad
+        return self.grad*mul_grad  
 
 class Tanh():
     def __init__(self):
