@@ -17,9 +17,9 @@
 
 ![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}}}{\\partial{x_i}}=\\frac{e^{x_i}\sum_i^k{e^{x_i}}-e^{x_i}e^{x_i}}{(\sum_i^k{e^{x_i}})^2})
 
-![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}}\\frac{\sum_i^k{e^{x_i}}}-e^{x_i}}{\sum_i^k{e^{x_i}}}})
+![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}\\frac{\sum_i^k{e^{x_i}}}-e^{x_i}}{\sum_i^k{e^{x_i}}}})
 
-![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}}(1-\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}}))
+![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}(1-\\frac{e^{x_i}}{\sum_i^k{e^{x_i}}}))
 
 ![](http://latex.codecogs.com/svg.latex?=s_i(1-s_i))
 
