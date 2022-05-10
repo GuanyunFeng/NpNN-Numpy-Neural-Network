@@ -32,6 +32,8 @@ class Sequential():
     def eval(self, x, y):
         x = np.array(x)
         for l in self.layers:
+            if type(l).__name__ == "Dropout":
+                continue
             x = l.forward(x)
         ans = (np.argmax(x, axis=1) == np.argmax(y, axis=1))
         acc = np.sum(ans)/ans.shape[0]
@@ -40,5 +42,7 @@ class Sequential():
     def predict(self, x):
         x = np.array(x)
         for l in self.layers:
+            if type(l).__name__ == "Dropout":
+                continue
             x = l.forward(x)
         return x

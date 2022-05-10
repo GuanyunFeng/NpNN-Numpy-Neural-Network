@@ -42,3 +42,24 @@ class Dense():
             mul_grad = mul_grad[:, :-1]
         self.weigths -= lr* w_grad
         return mul_grad
+
+
+class Dropout():
+    def __init__(self, keep_rate=0.8):
+        #keep_rate:保留的比例，随机失活的比例为1-keep_rate
+        self.keep_rate  = keep_rate
+    
+    #正向传播，计算输出
+    def forward(self, input):
+        batch_size, feature_dim = input.shape
+
+        #生成随机掩码矩阵
+        self.mask = np.random.rand(batch_size, feature_dim) < self.keep_rate
+        #除self.keep_rate进行缩放，保证训练和预测时数据分布接近。
+        output = self.mask*input/self.keep_rate
+
+        return output
+    
+    #反向传播，更新
+    def backward(self, mul_grad):
+        return mul_grad*self.mask/self.keep_rate
