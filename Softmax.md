@@ -23,13 +23,16 @@
 
 ![](http://latex.codecogs.com/svg.latex?=s_j(1-s_j))
 
-当![](http://latex.codecogs.com/svg.latex?i\\neq{j})时:
+当![](http://latex.codecogs.com/svg.latex?j\\neq{k})时:
 
 ![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{s_j}}{\\partial{x_k}}=\\frac{0*\sum_i{e^{x_i}}-e^{x_j}e^{x_k}}{(\sum_i^k{e^{x_i}})^2})
 
 ![](http://latex.codecogs.com/svg.latex?=\\frac{e^{x_j}}{\sum_i^k{e^{x_i}}}\\frac{e^{x_k}}{\sum_i^k{e^{x_i}}})
 
 ![](http://latex.codecogs.com/svg.latex?=-s_js_k)
+
+![](http://latex.codecogs.com/svg.latex?s_j、x_k)两两之间的偏导可以表示为矩阵形式，称之为雅可比矩阵。雅可比矩阵可以使用![](http://latex.codecogs.com/svg.latex?jacobian=S(I-S^T))计算，其中S时Softmax的输出向量，I是单位矩阵。注意，在计算![](http://latex.codecogs.com/svg.latex?jacobian=I-S^T)时，两者维度并不相同。实际运算是将S转置并复制n次，n是softmax输出的类别数量。不过在numpy中的减法会自动实现这一点，只需添加一个axis就可以了。
+
 
 ## 代码实现
 ```
