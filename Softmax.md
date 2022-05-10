@@ -29,14 +29,17 @@
 
 ![](http://latex.codecogs.com/svg.latex?=-s_js_k)
 
-![](http://latex.codecogs.com/svg.latex?s_j、x_k)两两之间的偏导可以表示为矩阵形式，称之为雅可比矩阵。雅可比矩阵可以使用![](http://latex.codecogs.com/svg.latex?jacobian=S(I-S^T))计算，其中S时Softmax的输出向量，I是单位矩阵。注意，在计算![](http://latex.codecogs.com/svg.latex?jacobian=I-S^T)时，两者维度并不相同。实际运算是将S转置并复制n次，n是softmax输出的类别数量。不过在numpy中的减法会自动实现这一点，只需添加一个axis就可以了。
+![](http://latex.codecogs.com/svg.latex?s_j、x_k)两两之间的偏导可以表示为矩阵形式，称之为雅可比矩阵。雅可比矩阵可以使用![](http://latex.codecogs.com/svg.latex?jacobian=S(I-S^T))计算，其中S时Softmax的输出向量，I是单位矩阵。注意，在计算![](http://latex.codecogs.com/svg.latex?I-S^T)时，两者维度并不相同。实际运算是将S转置并复制n次，n是softmax输出的类别数量。不过在numpy中的减法会自动实现这一点，只需添加一个axis就可以了。
+
+反向传播时，传回的累计梯度是损失对softmax输出的梯度，形状为(batch_size,units)。jacobian的形状为(batch_size,units,units)。我们对batch中的每一条数据计算累计梯度(units,)和其雅克比矩阵(units,units)的矩阵乘，即可得到loss对每个softmax输入的偏导。
 
 
 ## 代码实现
 ```
 class Softmax():
     def forward(self, input):
-        #grad,input,output的形状均为（batch_size,units)
+        #input,output的形状均为（batch_size,units)
+        #jacobian的形状为（batch_size,units,units)
         shiftinput = input - np.max(input)
         exps = np.exp(shiftinput) #(batch_size, units)
         output = np.einsum("ij, i->ij",exps, 1/np.sum(exps, axis=1))

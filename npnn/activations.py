@@ -50,7 +50,8 @@ class Sigmoid():
 
 class Softmax():
     def forward(self, input):
-        #grad,input,output的形状均为（batch_size,units)
+        #input,output的形状均为（batch_size,units)
+        #jacobian的形状为（batch_size,units,units)
         shiftinput = input - np.max(input)
         exps = np.exp(shiftinput) #(batch_size, units)
         output = np.einsum("ij, i->ij",exps, 1/np.sum(exps, axis=1))
