@@ -23,7 +23,7 @@
 
 ![](http://latex.codecogs.com/svg.latex?=s_j(1-s_j))
 
-当![](http://latex.codecogs.com/svg.latex?i \\neq j)时:
+当![](http://latex.codecogs.com/svg.latex?i\\neq j)时:
 
 ![](http://latex.codecogs.com/svg.latex?\\frac{\\partial{s_j}}{\\partial{x_k}}=\\frac{0*\sum_i{e^{x_i}}-e^{x_j}e^{x_k}}{(\sum_i^k{e^{x_i}})^2})
 
