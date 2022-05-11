@@ -7,14 +7,25 @@ class Sequential():
     def add(self, layer):
         self.layers.append(layer)
 
-    def compile(self, loss):
+    def compile(self, loss, opt):
         self.loss = loss
+
+        #设置优化器
+        for l in self.layers:
+            if "opt" not in l.__dict__.keys():
+                continue
+            #已经手动指定优化器的层不变
+            if l.opt == None:
+                l.opt = opt
+
+    def summary(self):
+        print([type(l).__name__ for l in self.layers])
 
     def fit(self, x, y, batchsize = 64, epoch = 2):
         x, y = np.array(x), np.array(y)
         loss_sum = 0
         losses = []
-        for e in range(epoch):
+        for _ in range(epoch):
             for i in range(0, x.shape[0], batchsize):
                 if i +batchsize < x.shape[0]:
                     x_batch, y_batch = x[i:i+batchsize], y[i:i+batchsize]

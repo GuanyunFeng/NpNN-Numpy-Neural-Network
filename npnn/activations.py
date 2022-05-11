@@ -35,7 +35,7 @@ class Tanh():
         self.grad = 1 - output*output
         return output
 
-    def backward(self):
+    def backward(self, mul_grad):
         return self.grad*mul_grad
 
 
