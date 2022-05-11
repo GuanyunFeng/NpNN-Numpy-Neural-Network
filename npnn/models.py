@@ -1,12 +1,12 @@
 import numpy as np
+import copy
 
 class Sequential():
     def __init__(self):
         self.layers = []
     
     def add(self, layer):
-        assert("forward" in layer.__dict__.keys())
-        assert("backward" in layer.__dict__.keys())
+        assert(hasattr(layer, "forward") and hasattr(layer, "backward"))
         self.layers.append(layer)
 
     def compile(self, loss, opt):
@@ -14,11 +14,11 @@ class Sequential():
 
         #设置优化器
         for l in self.layers:
-            if "opt" not in l.__dict__.keys():
+            if not hasattr(l, "opt"):
                 continue
             #已经手动指定优化器的层不变
             if l.opt == None:
-                l.opt = opt
+                l.opt = copy.deepcopy(opt)
 
     def fit(self, x, y, batchsize = 64, epoch = 2):
         x, y = np.array(x), np.array(y)
