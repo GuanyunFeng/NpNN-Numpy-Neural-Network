@@ -1,7 +1,7 @@
 import numpy as np
 
 class Dense():
-    def __init__(self, input_dim,units, use_bias = True, initializer="Xavier"):
+    def __init__(self, input_dim,units, opt, use_bias = True, use_layer_opt = False, initializer="Xavier"):
         #input:输入，即x
         #units：神经网络节点数量，也是数据经过
         #initializer:权重的初始化方式，目前只支持Xavier(
@@ -10,6 +10,7 @@ class Dense():
         self.units = units
         self.use_bias = use_bias
         self.initializer = initializer
+        self.opt = opt
         if self.use_bias:
             #如果使用bias，w形状应为(feature_dim + 1, units), 其中多的一维是bias。
             self.weigths = np.random.normal(loc=0.0, scale=(1/self.units)**0.5, size=(input_dim+1, self.units))
@@ -40,7 +41,7 @@ class Dense():
         if self.use_bias:
             #去除最后一维补的1
             mul_grad = mul_grad[:, :-1]
-        self.weigths -= lr* w_grad
+        self.opt.update(self.weigths, w_grad)
         return mul_grad
 
 

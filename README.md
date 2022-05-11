@@ -1,5 +1,7 @@
 # NpNN-Numpy-Neural-Network
 
+仍在编写中。。。目前仅对MLP及其组件进行了实现。
+
 ## 前言
 本系列主要是为了巩固自己对深度学习的理解，而我个人对于繁杂的数学公式理解速度远慢于去阅读代码，因此选择使用numpy来从零构建神经网络。本仓库在实现的过程中底层直接使用numpy而非c++，但会尽可能保证让代码简洁高效。在实现的过程中也会就一些问题展开讨论，希望能帮助到新接触到深度学习的小伙伴。
 
@@ -16,9 +18,10 @@
 神经网络的目标是最小化损失函数, 损失函数的作用在于度量预测值和真实值之间的差异。常用的损失函数有均方误差、[交叉熵](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/doc/CrossEntropy.md)等等。
 
 ### 优化器
+优化器决定了权重如何利用梯度进行更新，本仓库中实现了几种常见的优化器SGD,Adagrad,RMSprop,Adam。
 
 ### 模型封装
-本仓库目前仅实现了顺序模型，用法和keras中的Sequential()相似。
+本仓库目前仅实现了[顺序模型](https://github.com/GuanyunFeng/NpNN-Numpy-Neural-Network/blob/main/doc/model.md)，用法和keras中的Sequential()相似。
 
 ## 代码示例
 
