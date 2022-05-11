@@ -5,6 +5,8 @@ class Sequential():
         self.layers = []
     
     def add(self, layer):
+        assert("forward" in layer.__dict__.keys())
+        assert("backward" in layer.__dict__.keys())
         self.layers.append(layer)
 
     def compile(self, loss, opt):
@@ -17,9 +19,6 @@ class Sequential():
             #已经手动指定优化器的层不变
             if l.opt == None:
                 l.opt = opt
-
-    def summary(self):
-        print([type(l).__name__ for l in self.layers])
 
     def fit(self, x, y, batchsize = 64, epoch = 2):
         x, y = np.array(x), np.array(y)
@@ -57,3 +56,6 @@ class Sequential():
                 continue
             x = l.forward(x)
         return x
+
+    def summary(self):
+        print([type(l).__name__ for l in self.layers])

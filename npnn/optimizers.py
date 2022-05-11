@@ -10,7 +10,7 @@ class SGD():
         self.flag = True #第一轮为True,后续迭代均为False
         self.accumulate_momentum = 0
     
-    def update_weight(self, weight, grad):
+    def update(self, weight, grad):
         if self.weight_decay:
             grad = weight*self.weight_decay + grad
         if self.momentum:
@@ -21,15 +21,21 @@ class SGD():
                 grad = self.accumulate_m
         weight -= self.lr* grad
 
+
 class Adagrad():
     def __init(self, lr, weight_decay = 0):
         self.lr = lr
         self.weight_decay = weight_decay
+        self.flag = True #第一轮为True,后续迭代均为False
     
-    def get_eta(self, weight, grad):
+    def update(self, weight, grad):
         if self.weight_decay:
             grad = weight*self.weight_decay + grad
-        return self.lr*grad
+        if self.flag:
+            self.stat_sum = np.zeros_like(grad)
+        self.stat_sum += grad**2
+        weight -= self.lr*grad/(self.stat_sum**0.5 + 1e-10)
+
 
 class RMSprop():
     def __init(self, lr):
