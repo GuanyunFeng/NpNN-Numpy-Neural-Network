@@ -13,6 +13,9 @@ class Relu():
     def backward(self, mul_grad):
         return self.grad*mul_grad
 
+
+
+
 class Leaky_Relu():
     def __init__(self, leaky=0.1):
         self.leaky = leaky
@@ -29,6 +32,9 @@ class Leaky_Relu():
     def backward(self, mul_grad):
         return self.grad*mul_grad  
 
+
+
+
 class Tanh():
     def forward(self):
         output = (np.exp(input) - np.exp(-input)) / (np.exp(input) + np.exp(-input))
@@ -37,6 +43,8 @@ class Tanh():
 
     def backward(self, mul_grad):
         return self.grad*mul_grad
+
+
 
 
 class Sigmoid():
@@ -48,6 +56,8 @@ class Sigmoid():
 
     def backward(self, mul_grad):
         return self.grad*mul_grad
+
+
 
 
 class Softmax():

@@ -50,6 +50,22 @@ class Dense():
 
 
 
+class Conv():
+    def __init__(self, kernal_size, padding="same"):
+        self.kernal_size = kernal_size
+    
+    #正向传播，计算输出
+    def forward(self, input):
+        batch_size, feature_dim = input.shape
+
+        return output
+    
+    #反向传播，更新
+    def backward(self, mul_grad):
+        return mul_grad*self.mask/self.keep_rate
+
+
+
 
 class Dropout():
     def __init__(self, keep_rate=0.8):
