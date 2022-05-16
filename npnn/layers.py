@@ -9,6 +9,7 @@ class Dense():
         #use_bias: 是否使用偏置
 
         self.weigths = None
+        self.w_grad = None
         self.units = units
         self.use_bias = use_bias
         self.initializer = initializer #
@@ -39,15 +40,27 @@ class Dense():
         #self.input形状(batch_size, feature_dim)
         #self.weight和w_grad形状(feature_dim, units)
         #对weight的梯度为w_grad,对input的梯度更新倒mul_grad中，用于计算更前面层的梯度。
-        w_grad = np.matmul(np.transpose(self.input), mul_grad)
+        #已经存在w_grad:
+        if self.grad:
+            self.w_grad += np.matmul(np.transpose(self.input), mul_grad)
+        else:
+            self.w_grad = np.matmul(np.transpose(self.input), mul_grad)
         mul_grad = np.matmul(mul_grad, np.transpose(self.weigths))
         if self.use_bias:
             #去除最后一维补的1
             mul_grad = mul_grad[:, :-1]
-        #使用
-        self.opt.update(self.weigths, w_grad)
         return mul_grad
 
+    def update(opt):
+        #更新
+        opt.update(self.weights, self.w_grad)
+        #清空梯度
+        self.w_grad = None
+
+    def __call__(self, input_node):
+        #用于构建静态图
+        out_node = Tensor(self, [input_node])
+        return out_node
 
 
 class Conv():
