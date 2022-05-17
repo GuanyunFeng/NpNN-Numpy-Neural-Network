@@ -54,9 +54,9 @@ class Dense():
             mul_grad = mul_grad[:, :-1]
         return mul_grad
 
-    def update(self, opt):
+    def update(self):
         #更新
-        opt.update(self.weights, self.w_grad)
+        self.opt.update(self.weights, self.w_grad)
         #清空梯度
         self.w_grad = None
 
@@ -64,21 +64,6 @@ class Dense():
         #用于构建静态图
         out_node = Tensor(self, [input_node])
         return out_node
-
-
-class Conv():
-    def __init__(self, kernal_size, padding="same"):
-        self.kernal_size = kernal_size
-    
-    #正向传播，计算输出
-    def forward(self, input):
-        batch_size, feature_dim = input.shape
-
-        return output
-    
-    #反向传播，更新
-    def backward(self, mul_grad):
-        return mul_grad*self.mask/self.keep_rate
 
 
 
