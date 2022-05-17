@@ -1,4 +1,7 @@
+from glob import glob
+import graphlib
 import numpy as np
+from graph import *
 
 class Dense():
     def __init__(self, input_dim,units, opt = None, use_bias = True, initializer="Xavier"):
@@ -51,7 +54,7 @@ class Dense():
             mul_grad = mul_grad[:, :-1]
         return mul_grad
 
-    def update(opt):
+    def update(self, opt):
         #更新
         opt.update(self.weights, self.w_grad)
         #清空梯度
